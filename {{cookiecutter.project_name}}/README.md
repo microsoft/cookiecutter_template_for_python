@@ -14,7 +14,7 @@ This example uses Github Actions and Terraform.
     │   ├── adr               # ADR (Architecture Decision Record)
     ├── assets                # Holds content like 'jpg', 'img', 'css', 'fonts's
     ├── infrastructure        # Holds your infrastructure as code, in our case Terraform
-    │   ├── terraform         # Cookiecutter template folder with terraform in this case
+    │   ├── terraform         # Holds all terraform files
     │   ├── variables         # Holds all terraform variables
     ├── lib                   # Standard folder for third party solutions and libraries
     ├── src                   # Source code folder that holds all the solutions
