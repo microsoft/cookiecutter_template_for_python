@@ -1,4 +1,4 @@
-## Cookiecutter create template for Python repository
+## Cookiecutter - create template for Python repository
 
 1. Rename all your files or folders with the keyword cookiecutter followed by the item name
     example: folder        -> {{cookiecutter.documents}}
@@ -6,7 +6,7 @@
 2. Add cookiecutter.json at the root of your project where you define the item names from above
 3. Push the folder structure to your repo (Github, Azure Devops)
 
-## Cookiecutter reuse template from Github (windows)
+## Cookiecutter - reuse template from Github (windows)
 
 1. Create a new folder where you will store the repository you want to clone.
 2. Make sure your terminal is pointing to your new folder.
