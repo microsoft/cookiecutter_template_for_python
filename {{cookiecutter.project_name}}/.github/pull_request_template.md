@@ -1,8 +1,8 @@
-Please give a proper description of your PR:
+Please give a proper description of your Pull Request (PR):
 
-- This PR is about adding this feature
-- It is related to bug #1234
-- And anything else that will make it easy to understand what you are trying to solve
+- This PR is about adding a certain feature
+- It is related to a particular bug (#1234)
+- ...and anything else that will make it easy to understand what you are trying to solve
 
 Checklist for your PR:
 
