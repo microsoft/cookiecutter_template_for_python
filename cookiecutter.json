@@ -1,0 +1,13 @@
+{
+  "project_name": "Your Project Name",
+  "docs": "documents folder",
+  "infra": "infrastructure as code",
+  "libs": "3rd party libraries",
+  "python_project": "your python project name",
+  "_copy_without_render": [
+    "*.html",
+    "*.js",
+    "*.map",
+    "*.css"
+  ]
+}

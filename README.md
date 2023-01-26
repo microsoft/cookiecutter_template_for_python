@@ -1,14 +1,29 @@
-# Project
+## Cookiecutter create template for Python repository
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+1. Rename all your files or folders with the keyword cookiecutter followed by the item name
+    example: folder        -> {{cookiecutter.documents}}
+                python file   -> {{cookiecutter.main}}.py
+2. Add cookiecutter.json at the root of your project where you define the item names from above
+3. Push the folder structure to your repo (Github, Azure Devops)
 
-As the maintainer of this project, please make a few updates:
+## Cookiecutter reuse template from Github (windows)
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+1. Create a new folder where you will store the repository you want to clone.
+2. Make sure your terminal is pointing to your new folder.
+3. Create a virtual environment: python -m venv environment
+4. Activate environment: .\environment\Scripts\activate
+5. Install cookiecutter lib for pyton: pip install cookiecutter
+6. Clone repo with cookiecutter: cookiecutter https://github.com/youruser/CookiecutterRepo.git
+
+## Other tips
+
+1. When using step #6 from above, yout repo will be cloned in the .cookiecutter folder
+2. For working with a specific branch you can just copy its content in the .cookiecutter folder and use that version for testing
+
+## Documentation
+
+- [cookiecutter-library](https://pypi.org/project/cookiecutter-python/)
+- [cookie-cutter-documentation](https://cookiecutter.readthedocs.io/en/stable/)
 
 ## Contributing
 
