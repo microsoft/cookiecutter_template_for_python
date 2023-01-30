@@ -1,19 +1,22 @@
+Python repository sample on how to build and layer your monorepo. 
+This is a cookiecutter reusable template and the steps bellow explain how to reuse this repository.
+
 ## Cookiecutter - create template for Python repository
 
-1. Rename all your files or folders with the keyword cookiecutter followed by the item name
+1. In your project, in order to create templates, rename all your files/folders with the keyword 'cookiecutter' followed by the item name
     example: folder        -> {{cookiecutter.documents}}
-                python file   -> {{cookiecutter.main}}.py
-2. Add cookiecutter.json at the root of your project where you define the item names from above
+             python file   -> {{cookiecutter.main}}.py
+2. Add cookiecutter.json at the root of your project where you define the templates you created
 3. Push the folder structure to your repo (Github, Azure Devops)
 
 ## Cookiecutter - reuse template from Github (windows)
 
-1. Create a new folder where you will store the repository you want to clone.
+1. On your local create a new folder where you will store the repository you want to clone.
 2. Make sure your terminal is pointing to your new folder.
 3. Create a virtual environment: python -m venv environment
 4. Activate environment: .\environment\Scripts\activate
 5. Install cookiecutter lib for pyton: pip install cookiecutter
-6. Clone repo with cookiecutter: cookiecutter https://github.com/youruser/CookiecutterRepo.git
+6. Clone repo with cookiecutter: cookiecutter https://github.com/youruser/CookiecutterRepo.git (your github clone url)
 
 ## Other tips
 
