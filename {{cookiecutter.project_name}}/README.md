@@ -1,8 +1,10 @@
-## Project
+# Project
+
 This is a python repository sample on how to build and layer your monorepo.
 This example uses Github Actions and Terraform.
 
 ## Structure example description
+
     .
     ├── .github               # Github Action folders that enables for CI and CD for your repo
     │   ├── actions           # Add custom actions
@@ -21,7 +23,8 @@ This example uses Github Actions and Terraform.
     │   ├── python-solution
     ├── README.md
 
-## CI pipeline 
+## CI pipeline
+
 This is an initial sample of a CI pipeline for our repository. The pipeline uses super-linter which is a combination of linters, in order to validate the entire source code.
 This means that python, yaml, .md and tf files will be validated all together, based on current configuration
 Code secrets scan to ensure no sensitive information or credentials are being committed.
