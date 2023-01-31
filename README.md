@@ -1,30 +1,20 @@
-# Python repository sample on how to build and layer your monorepo
+# Cookiecutter Python repository demonstrating how to construct and layer your monorepo
 
-This is a cookiecutter reusable template and the steps bellow explain how to reuse this repository.
+This is a lightweight, reusable Python Cookiecutter template, containing main folder structure you would need for any Python project.
 
-## Cookiecutter - create template for Python repository
+Project contains a basic Python folder structure, Architecture Decision Record & documentation structure, pull request template, as well as CI/CD pipeline with super-linter.
 
-1. In your project, in order to create templates, rename all your files/folders with the keyword 'cookiecutter' followed by the item name
-    example: folder        -> {{cookiecutter.documents}}
-             python file   -> {{cookiecutter.main}}.py
-2. Add cookiecutter.json at the root of your project where you define the templates you created
-3. Push the folder structure to your repo (Github, Azure Devops)
+## Quickstart
 
-## Cookiecutter - reuse template from Github (windows)
+Install the latest Cookiecutter if you haven't installed it yet (this requires Cookiecutter 1.4.0 or higher):
 
-1. On your local create a new folder where you will store the repository you want to clone.
-2. Make sure your terminal is pointing to your new folder.
-3. Create a virtual environment: python -m venv environment
-4. Activate environment: .\environment\Scripts\activate
-5. Install cookiecutter lib for pyton: pip install cookiecutter
-6. Clone repo with cookiecutter: cookiecutter https://github.com/youruser/CookiecutterRepo.git (your github clone url)
+```pip install -U cookiecutter```
 
-## Other tips
+Generate a Python package project:
 
-1. When using step #6 from above, yout repo will be cloned in the .cookiecutter folder
-2. For working with a specific branch you can just copy its content in the .cookiecutter folder and use that version for testing
+```https://github.com/microsoft/cookiecutter_template_for_python```
 
-## Documentation
+## Cookiecutter Documentation
 
 - [cookiecutter-library](https://pypi.org/project/cookiecutter-python/)
 - [cookie-cutter-documentation](https://cookiecutter.readthedocs.io/en/stable/)
