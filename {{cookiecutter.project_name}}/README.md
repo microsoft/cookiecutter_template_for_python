@@ -1,18 +1,22 @@
-## Project
-This is a python repository sample on how to build and layer your monorepo.
-This example uses Github Actions and Terraform.
+# Project
+
+This repository provides a sample of how to construct and organize a Python monorepo.
+The sample utilizes Github Actions and Terraform.
 
 ## Structure example description
+
     .
-    ├── .github               # Github Action folders that enables for CI and CD for your repo
+    ├── .github               # Github Action folders for CI and CD for your repo
     │   ├── actions           # Add custom actions
     │   ├── scripts           # Add custom scripts
     │   ├── workflows         # Build your Github Actions by adding a workflow file
     ├── documents             # Documentation about the project
     │   ├── design            # Add your designs and architectures here
+    │       ├── assets        # Holds binary content like 'jpg', 'png', 'css', etc.
     │   ├── spikes            # Holds code samples for investigation
     │   ├── adr               # ADR (Architecture Decision Record)
-    ├── assets                # Holds content like 'jpg', 'img', 'css', 'fonts's
+    │       ├── assets        # Holds binary content like 'jpg', 'png', 'css', etc.
+    ├── assets                # Holds binary content like 'jpg', 'png', 'css', etc.
     ├── infrastructure        # Holds your infrastructure as code, in our case Terraform
     │   ├── terraform         # Holds all terraform files
     │   ├── variables         # Holds all terraform variables
@@ -21,10 +25,9 @@ This example uses Github Actions and Terraform.
     │   ├── python-solution
     ├── README.md
 
-## CI pipeline 
-This is an initial sample of a CI pipeline for our repository. The pipeline uses super-linter which is a combination of linters, in order to validate the entire source code.
-This means that python, yaml, .md and tf files will be validated all together, based on current configuration
-Code secrets scan to ensure no sensitive information or credentials are being committed.
+## CI pipeline
+
+This is a base sample of a continuous integration (CI) pipeline for the repository. The pipeline uses super-linter, a fusion of multiple linters, to validate the entire source code, including Python, YAML, .md, and TF files, as specified in the current configuration. It also performs a code secrets scan to verify that no confidential information or credentials are being committed.
 
 ## Template for pull request
 
