@@ -1,7 +1,6 @@
 {
   "project_name": "Your Project Name",
-  "infra": "infrastructure as code",
-  "python_project": "your python project name",
+  "python_project": "Your Python Project Name",
   "_copy_without_render": [
     "*.html",
     "*.js",
