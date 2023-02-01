@@ -25,7 +25,6 @@ jobs:
         VALIDATE_MARKDOWN: true
         VALIDATE_PYTHON_PYLINT: true
         VALIDATE_PYTHON_FLAKE8: true
-        VALIDATE_TERRAFORM_TFLINT: true
         VALIDATE_YAML: true
 
     - name: Detect Secrets Dependencies

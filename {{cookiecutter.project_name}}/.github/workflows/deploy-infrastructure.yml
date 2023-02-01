@@ -34,4 +34,4 @@ jobs:
       with:
         subscriptionId: $'{{ "{{" }}' secrets.AZURE_SUBSCRIPTION '{{ "}}" }}'
         template: ./infrastructure/bicep/modules/infrastructure.bicep
-        parameters: 'storagePrefix=mystore storageSKU=Standard_LRS'
+        parameters: ./infrastructure/bicep/variables/common.json ./infrastructure/bicep/variables/$'{{ "{{" }}' inputs.environmentName '{{ "}}" }}'-environment.json

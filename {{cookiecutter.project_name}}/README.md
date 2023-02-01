@@ -1,7 +1,7 @@
 # Project
 
 This repository provides a sample of how to construct and organize a Python monorepo.
-The sample utilizes Github Actions and Terraform.
+The sample utilizes Github Actions and Bicep.
 
 ## Structure example description
 
