@@ -1,5 +1,5 @@
 ---
-name: Deploy  {{cookiecutter.python_project}} infrastructure
+name: Deploy  infrastructure
 inputs:
   environment:
     type: choice
@@ -19,7 +19,7 @@ jobs:
     name: Deploy infra
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    
+    environment: $'{{ "{{" }}' inputs.environmentName '{{ "}}" }}'
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -27,11 +27,11 @@ jobs:
     - name: Log into Azure
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: $'{{ "{{" }}' secrets.AZURE_CREDENTIALS '{{ "}}" }}'
   
     - name: Deploy Bicep
       uses: azure/arm-deploy@v1
       with:
-        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        subscriptionId: $'{{ "{{" }}' secrets.AZURE_SUBSCRIPTION '{{ "}}" }}'
         template: ./infrastructure/bicep/modules/infrastructure.bicep
         parameters: 'storagePrefix=mystore storageSKU=Standard_LRS'
