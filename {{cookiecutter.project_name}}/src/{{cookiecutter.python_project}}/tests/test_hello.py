@@ -1,4 +1,12 @@
+"""Sample unit test code"""
+
+import unittest
 import hello
 
-def test_hello():
-    assert hello.hello() == "Hello World!"
+
+class TestHello(unittest.TestCase):
+    """Test for hello class."""
+    @classmethod
+    def test_hello_world(cls):
+        """Test for hello world."""
+        assert hello.main() == "Hello World!"

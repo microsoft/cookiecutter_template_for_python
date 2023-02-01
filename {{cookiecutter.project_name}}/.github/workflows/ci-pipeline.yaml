@@ -42,7 +42,7 @@ jobs:
 
     - name: Run tests and check code coverage
       working-directory: ./src/{{cookiecutter.python_project}}
-      run: coverage run --omit '*/usr/lib*' -m unittest discover -s ./tests 
+      run: coverage run -m unittest discover -s tests 
       shell: bash
       id: codecoveragetests
 
@@ -50,4 +50,4 @@ jobs:
       working-directory: ./src/{{cookiecutter.python_project}}
       if: steps.codecoveragetests.outputs.exit_code == 0
       run: |
-        coverage report --fail-under=80 --omit '*/usr/lib*,*/tests*'
+        coverage report --fail-under=80 --omit './tests/*'
