@@ -6,22 +6,24 @@ The sample utilizes Github Actions and Terraform.
 ## Structure example description
 
     .
-    ├── .github               # Github Action folders for CI and CD for your repo
-    │   ├── actions           # Add custom actions
-    │   ├── scripts           # Add custom scripts
-    │   ├── workflows         # Build your Github Actions by adding a workflow file
-    ├── documents             # Documentation about the project
-    │   ├── design            # Add your designs and architectures here
-    │       ├── assets        # Holds binary content like 'jpg', 'png', 'css', etc.
-    │   ├── spikes            # Holds code samples for investigation
-    │   ├── adr               # ADR (Architecture Decision Record)
-    │       ├── assets        # Holds binary content like 'jpg', 'png', 'css', etc.
-    ├── assets                # Holds binary content like 'jpg', 'png', 'css', etc.
-    ├── infrastructure        # Holds your infrastructure as code, in our case Terraform
-    │   ├── terraform         # Holds all terraform files
-    │   ├── variables         # Holds all terraform variables
-    ├── lib                   # Standard folder for third party solutions and libraries
-    ├── src                   # Source code folder that holds all the solutions
+    ├── .github                     # Github Action folders for CI and CD for your repo
+    │   ├── actions                 # Add custom actions
+    │   ├── scripts                 # Add custom scripts
+    │   ├── workflows               # Build your Github Actions by adding a workflow file
+    ├── documents                   # Documentation about the project
+    │   ├── design                  # Add your designs and architectures here
+    │   │   ├── assets              # Holds binary content like 'jpg', 'png', 'css', etc.
+    │   ├── spikes                  # Holds code samples for investigation
+    │   ├── adr                     # ADR (Architecture Decision Records)
+    │   │   ├── assets              # Holds binary content like 'jpg', 'png', 'css', etc.
+    ├── assets                      # Holds binary content like 'jpg', 'png', 'css', etc.
+    ├── infrastructure              # Holds your Infrastructure as Code (IaC)
+    │   ├── bicep                   # IaC Bicep files
+    │   │   ├── modules             # Holds all Bicep main modules
+    │   │   ├── resource-templates  # Holds all templates for Azure resources
+    │   │   ├── variables           # Holds all Bicep deployment parameters
+    ├── lib                         # Standard folder for third party solutions and libraries
+    ├── src                         # Source code folder that holds all the solutions
     │   ├── python-solution
     ├── README.md
 

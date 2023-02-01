@@ -1,0 +1,37 @@
+---
+name: Deploy {{cookiecutter.project_name}}
+inputs:
+  environment:
+    type: choice
+    description: "Environment to deploy to, e.g. dev, test, prd"
+    options:
+      - dev
+      - test
+      - prod
+      - nightly
+
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    name: Deploy infra
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: ${{ inputs.environmentName }}
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Log into Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+  
+    - name: Deploy Bicep
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+        template: ./infrastructure/bicep/modules/infrastructure.bicep
+        parameters: 'storagePrefix=mystore storageSKU=Standard_LRS'
