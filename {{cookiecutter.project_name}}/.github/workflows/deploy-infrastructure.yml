@@ -1,25 +1,16 @@
 ---
 name: Deploy  infrastructure
-inputs:
-  environment:
-    type: choice
-    description: "Environment to deploy to, e.g. dev, test, prd"
-    options:
-      - dev
-      - test
-      - prod
-      - nightly
 
-on:  # yamllint disable-line rule:truthy
+on:
   push:
     branches: [main]
 
+
 jobs:
-  build-and-deploy:
-    name: Deploy infra
+  build-and-deploy-dev:
+    name: Deploy dev infrastructure
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    environment: ${{ "{{" }} inputs.environmentName {{ "}}" }}
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -29,9 +20,13 @@ jobs:
       with:
         creds: ${{ "{{" }} secrets.AZURE_CREDENTIALS {{ "}}" }}
   
-    - name: Deploy Bicep
-      uses: azure/arm-deploy@v1
+    - name: Deploy Resource Group
+      uses: azure/CLI@v1
       with:
-        subscriptionId: ${{ "{{" }} secrets.AZURE_SUBSCRIPTION {{ "}}" }}
-        template: ./infrastructure/bicep/modules/infrastructure.bicep
-        parameters: ./infrastructure/bicep/variables/common.json ./infrastructure/bicep/variables/${{ "{{" }} inputs.environmentName {{ "}}" }}-environment.json
+        azcliversion: 2.42.0
+        inlineScript: |
+          az deployment sub create --template-file "./infrastructure/bicep/modules/infrastructure.bicep" \
+                         --name "dev-deployment" \
+                         -l $(jq -r .parameters.location.value ./infrastructure/bicep/variables/dev-environment.json) \
+                         -p @./infrastructure/bicep/variables/common.json \
+                            @./infrastructure/bicep/variables/dev-environment.json

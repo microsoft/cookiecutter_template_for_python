@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "environment": {
-        "value": "Development"
+        "value": "dev"
       },
       "location": {
         "value": "uksouth"
