@@ -1,5 +1,5 @@
 ---
-name: Deploy {{cookiecutter.python_project}} infrastructure
+name: Deploy infrastructure
 inputs:
   environment:
     type: choice
