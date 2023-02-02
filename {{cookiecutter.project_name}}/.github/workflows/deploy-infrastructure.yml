@@ -12,21 +12,22 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Log into Azure
-      uses: azure/login@v1
-      with:
-        creds: ${{ "{{" }} secrets.AZURE_CREDENTIALS {{ "}}" }}
+      - name: Log into Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ "{{" }} secrets.AZURE_CREDENTIALS {{ "}}" }}
   
-    - name: Deploy Resource Group
-      uses: azure/CLI@v1
-      with:
-        azcliversion: 2.42.0
-        inlineScript: |
-          az deployment sub create --template-file "./infrastructure/bicep/modules/infrastructure.bicep" \
-                         --name "dev-deployment" \
-                         -l $(jq -r .parameters.location.value ./infrastructure/bicep/variables/dev-environment.json) \
-                         -p @./infrastructure/bicep/variables/common.json \
-                            @./infrastructure/bicep/variables/dev-environment.json
+      - name: Deploy Resource Group
+        uses: azure/CLI@v1
+        with:
+          azcliversion: 2.42.0
+          inlineScript: |
+            az deployment sub create \
+                --template-file "./infrastructure/bicep/modules/infrastructure.bicep" \
+                --name "dev-deployment" \
+                -l $(jq -r .parameters.location.value ./infrastructure/bicep/variables/dev-environment.json) \
+                -p @./infrastructure/bicep/variables/common.json \
+                   @./infrastructure/bicep/variables/dev-environment.json
