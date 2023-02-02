@@ -1,29 +1,26 @@
-Python repository sample on how to build and layer your monorepo. 
-This is a cookiecutter reusable template and the steps bellow explain how to reuse this repository.
+# Cookiecutter Python repository demonstrating how to construct and layer your monorepo
 
-## Cookiecutter - create template for Python repository
+This is a lightweight, reusable Python Cookiecutter template, containing main folder structure you would need for any Python project.
 
-1. In your project, in order to create templates, rename all your files/folders with the keyword 'cookiecutter' followed by the item name
-    example: folder        -> {{cookiecutter.documents}}
-             python file   -> {{cookiecutter.main}}.py
-2. Add cookiecutter.json at the root of your project where you define the templates you created
-3. Push the folder structure to your repo (Github, Azure Devops)
+Project contains a basic Python folder structure, Architecture Decision Record & documentation structure, pull request template, as well as CI/CD pipeline with super-linter.
 
-## Cookiecutter - reuse template from Github (windows)
+## Quickstart
 
-1. On your local create a new folder where you will store the repository you want to clone.
-2. Make sure your terminal is pointing to your new folder.
-3. Create a virtual environment: python -m venv environment
-4. Activate environment: .\environment\Scripts\activate
-5. Install cookiecutter lib for pyton: pip install cookiecutter
-6. Clone repo with cookiecutter: cookiecutter https://github.com/youruser/CookiecutterRepo.git (your github clone url)
+Install the latest Cookiecutter if you haven't installed it yet (this requires Cookiecutter 1.4.0 or higher):
 
-## Other tips
+```pip install -U cookiecutter```
 
-1. When using step #6 from above, yout repo will be cloned in the .cookiecutter folder
-2. For working with a specific branch you can just copy its content in the .cookiecutter folder and use that version for testing
+Generate a Python package project:
 
-## Documentation
+```https://github.com/microsoft/cookiecutter_template_for_python```
+
+Navigate to the directory created by the Cookiecutter and initialize it as git repo:
+
+```git init -b main```
+
+Now you can commit and push the newly created folder and repo into your GitHub.
+
+## Cookiecutter Documentation
 
 - [cookiecutter-library](https://pypi.org/project/cookiecutter-python/)
 - [cookie-cutter-documentation](https://cookiecutter.readthedocs.io/en/stable/)
@@ -44,8 +41,8 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.

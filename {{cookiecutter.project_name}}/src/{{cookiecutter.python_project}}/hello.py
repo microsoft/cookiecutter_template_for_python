@@ -1,5 +1,5 @@
-# Sample code for testing the project
+"""Sample code for testing the project"""
+
 
 def main():
-    """Main function"""
-    return "Hello World"
+    return "Hello World!"

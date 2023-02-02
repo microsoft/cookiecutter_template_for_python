@@ -1,30 +1,41 @@
-## Project
-This is a python repository sample on how to build and layer your monorepo.
-This example uses Github Actions and Terraform.
+# Project
+
+This repository provides a sample Python monorepo with CI, tests, linting and CD to Azure.
+The sample utilizes Github Actions, SuperLinter and Bicep.
+
+## CD Quickstart
+
+To enable the CD pipeline that deploys resources to Azure, you will need to create a Service Principal in Azure that will be used by the agent to authenticate and create resources. To do so follow these steps: [Use the Azure login action with a service principal secret](https://learn.microsoft.com/en-us/azure/developer/github/connect-from-azure?tabs=azure-portal%2Cwindows#use-the-azure-login-action-with-a-service-principal-secret)
 
 ## Structure example description
+
     .
-    ├── .github               # Github Action folders that enables for CI and CD for your repo
-    │   ├── actions           # Add custom actions
-    │   ├── scripts           # Add custom scripts
-    │   ├── workflows         # Build your Github Actions by adding a workflow file
-    ├── documents             # Documentation about the project
-    │   ├── design            # Add your designs and architectures here
-    │   ├── spikes            # Holds code samples for investigation
-    │   ├── adr               # ADR (Architecture Decision Record)
-    ├── assets                # Holds content like 'jpg', 'img', 'css', 'fonts's
-    ├── infrastructure        # Holds your infrastructure as code, in our case Terraform
-    │   ├── terraform         # Holds all terraform files
-    │   ├── variables         # Holds all terraform variables
-    ├── lib                   # Standard folder for third party solutions and libraries
-    ├── src                   # Source code folder that holds all the solutions
-    │   ├── python-solution
+    ├── .github                     # Github Actions folders for CI/CD
+    │   ├── actions                 # Custom actions
+    │   ├── linters                 # Linter exception files
+    │   ├── scripts                 # Custom shell scripts
+    │   ├── workflows               # Github Actions workflow files
+    ├── documents                   # Documentation about the project
+    │   ├── design                  # Designs and architectures
+    │   │   ├── assets              # Binary content like 'jpg', 'png', etc.
+    │   ├── spikes                  # Code and assets created during 'spikes' (tech investigation) 
+    │   ├── adr                     # ADRs (Architecture Decision Records)
+    │   │   ├── assets              # Binary content like 'jpg', 'png', etc.
+    ├── assets                      # Binary content like 'jpg', 'png', etc.
+    ├── infrastructure              # Infrastructure as Code (IaC) templates
+    │   ├── bicep                   # IaC Bicep files
+    │   │   ├── modules             # Bicep main modules (e.g. infrastructure)
+    │   │   ├── resource-templates  # Azure resource templates (e.g. storage)
+    │   │   ├── variables           # Bicep deployment common and environment parameters 
+    ├── lib                         # Standard folder for third party solutions and libraries
+    ├── src                         # Source code folder for the Python project itself
+    │   ├── python-solution         # Custom named solutions
+    │   ├── tests                   # Solution unit tests 
     ├── README.md
 
-## CI pipeline 
-This is an initial sample of a CI pipeline for our repository. The pipeline uses super-linter which is a combination of linters, in order to validate the entire source code.
-This means that python, yaml, .md and tf files will be validated all together, based on current configuration
-Code secrets scan to ensure no sensitive information or credentials are being committed.
+## CI pipeline
+
+This is a base sample of a continuous integration (CI) pipeline for the repository. The pipeline uses super-linter, a fusion of multiple linters, to validate the entire source code, including Python, YAML and .md files, as specified in the current configuration. It also performs a code secrets scan to verify that no confidential information or credentials are being committed to the repo. The pipeline runs on both PR and push to main.
 
 ## Template for pull request
 
