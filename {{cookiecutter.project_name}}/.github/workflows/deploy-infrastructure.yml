@@ -27,7 +27,7 @@ jobs:
           inlineScript: |
             az deployment sub create \
                 --template-file "./infrastructure/bicep/modules/infrastructure.bicep" \
-                --name "dev-deployment" \
+                --name "dev-deployment$RANDOM" \
                 -l $(jq -r .parameters.location.value ./infrastructure/bicep/variables/dev-environment.json) \
                 -p @./infrastructure/bicep/variables/common.json \
                    @./infrastructure/bicep/variables/dev-environment.json
