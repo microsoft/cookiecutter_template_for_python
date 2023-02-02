@@ -14,6 +14,12 @@ Generate a Python package project:
 
 ```https://github.com/microsoft/cookiecutter_template_for_python```
 
+Navigate to the directory created by the Cookiecutter and initialize it as git repo:
+
+```git init -b main```
+
+Now you can commit and push the newly created folder and repo into your GitHub.
+
 ## Cookiecutter Documentation
 
 - [cookiecutter-library](https://pypi.org/project/cookiecutter-python/)
